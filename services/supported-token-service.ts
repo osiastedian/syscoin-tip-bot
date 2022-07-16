@@ -9,12 +9,6 @@ export namespace SupportedTokenService {
   }
 
   export function getContractAddress(token: ERC20Token): string {
-    let address = "";
-    switch (token) {
-      case ERC20Token.PSYS:
-        address = supportedTokens.PSYS.address;
-        break;
-    }
-    return address;
+    return supportedTokens[token]?.address ?? "";
   }
 }
